@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ContentFittingWebView'
-  spec.version      = '1.0.0'
+  spec.version      = '1.0.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/Bilue/ContentFittingWebView'
   spec.authors      = { 'Rhys Powell' => 'rhys@bilue.com.au' }
