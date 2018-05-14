@@ -50,11 +50,12 @@ public final class ContentFittingWebView: WKWebView {
         contentSizeObservationToken = observe(\.scrollView.contentSize, options: [.initial, .old, .new]) { (_, change) in
             if let oldValue = change.oldValue,
                 let newValue = change.newValue {
-                if oldValue.height == newValue.height {
+                if oldValue.height != newValue.height {
                     self.delegate?.contentFittingWebView?(self, willChangeSizeTo: newValue)
                     self.invalidateIntrinsicContentSize()
                     self.delegate?.contentFittingWebView?(self, didChangeSizeTo: newValue)
-                    if !self.hasLiveContent { self.contentSizeObservationToken?.invalidate() }
+                } else if oldValue.height == newValue.height && !self.hasLiveContent {
+                    self.contentSizeObservationToken?.invalidate()
                 }
             }
         }
