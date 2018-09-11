@@ -1,14 +1,36 @@
-Pod::Spec.new do |spec|
-  spec.name         = 'ContentFittingWebView'
-  spec.version      = '1.0.2'
-  spec.platform     = :ios, '8.0'
-  spec.license      = { :type => 'MIT' }
-  spec.homepage     = 'https://github.com/Bilue/ContentFittingWebView'
-  spec.authors      = { 'Rhys Powell' => 'rhys@bilue.com.au' }
-  spec.summary      = 'A WKWebView subclass which sizes itself to fit its contents.'
-  spec.source       = { :git => 'https://github.com/Bilue/ContentFittingWebView.git', :tag => 'v1.0.2' }
-  spec.source_files = 'ContentFittingWebView/**/*.swift'
-  spec.swift_version = '4.2'
-  spec.ios.framework = 'UIKit'
-  spec.ios.framework = 'WebKit'
+#
+# Be sure to run `pod lib lint ContentFittingWebView.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
+#
+
+Pod::Spec.new do |s|
+  s.name             = 'ContentFittingWebView'
+  s.version          = '0.1.0'
+  s.summary          = 'A WKWebView subclass which sizes itself to fit its contents.'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = <<-DESC
+A WKWebView subclass which sizes itself to fit its contents. Useful if you want
+to position a view directly beneath web content using AutoLayout.
+                       DESC
+
+  s.homepage         = 'https://github.com/Bilue/ContentFittingWebView'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'Rhys Powell' => 'rhys@rpowell.me' }
+  s.source           = { :git => 'https://github.com/Bilue/ContentFittingWebView.git', :tag => s.version.to_s }
+
+  s.ios.deployment_target = '8.0'
+  s.swift_version = '4.1'
+
+  s.source_files = 'ContentFittingWebView/Classes/**/*'
+
+  s.frameworks = 'UIKit', 'WebKit'
 end

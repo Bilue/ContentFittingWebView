@@ -1,11 +1,3 @@
-//
-//  ContentFittingWebView.swift
-//  ContentFittingWebView
-//
-//  Created by Rhys Powell on 11/5/18.
-//  Copyright © 2018 Bilue. All rights reserved.
-//
-
 import UIKit
 import WebKit
 
@@ -25,10 +17,6 @@ public final class ContentFittingWebView: WKWebView {
 
     var contentSizeObservationToken: NSKeyValueObservation?
 
-    /// Whether the content of this web view is expected to change in size
-    // after the initial load
-    var hasLiveContent: Bool = false
-
     /// A delegate that will receive updates when this web view's size changes
     weak var delegate: ContentFittingWebViewDelegate?
 
@@ -40,6 +28,10 @@ public final class ContentFittingWebView: WKWebView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         startObservingHeight()
+    }
+
+    deinit {
+        contentSizeObservationToken?.invalidate()
     }
 
     public override var intrinsicContentSize: CGSize {
@@ -54,8 +46,6 @@ public final class ContentFittingWebView: WKWebView {
                     self.delegate?.contentFittingWebView?(self, willChangeSizeTo: newValue)
                     self.invalidateIntrinsicContentSize()
                     self.delegate?.contentFittingWebView?(self, didChangeSizeTo: newValue)
-                } else if oldValue.height == newValue.height && !self.hasLiveContent {
-                    self.contentSizeObservationToken?.invalidate()
                 }
             }
         }

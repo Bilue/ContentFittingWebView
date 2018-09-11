@@ -1,24 +1,29 @@
 # ContentFittingWebView
 
-[![license](https://img.shields.io/github/license/Bilue/ContentFittingWebView.svg?style=flat-square)](https://github.com/Bilue/ContentFittingWebView/blob/master/LICENSE) [![CocoaPods](https://img.shields.io/cocoapods/v/ContentFittingWebView.svg?style=flat-square)](https://cocoapods.org/pods/ContentFittingWebView) ![Carthage](https://img.shields.io/badge/carthage-compatible-green.svg?style=flat-square)
+[![CI Status](https://img.shields.io/travis/Bilue/ContentFittingWebView.svg?style=flat)](https://travis-ci.org/Bilue/ContentFittingWebView)
+[![Version](https://img.shields.io/cocoapods/v/ContentFittingWebView.svg?style=flat)](https://cocoapods.org/pods/ContentFittingWebView)
+[![License](https://img.shields.io/cocoapods/l/ContentFittingWebView.svg?style=flat)](https://cocoapods.org/pods/ContentFittingWebView)
+[![Platform](https://img.shields.io/cocoapods/p/ContentFittingWebView.svg?style=flat)](https://cocoapods.org/pods/ContentFittingWebView)
 
-ContentFittingWebView is a WKWebView subclass which dynamically updates its
-`intrinsicContentSize` to fit its contents.
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
 
 ## Installation
 
-### Carthage
-
-Add the following to your `Cartfile`:
-
-```
-github "Bilue/ContentFittingWebView" ~> 1.0.0
-```
-
-### CocoaPods
-
-Add the following to your `Podfile`
+ContentFittingWebView is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ContentFittingWebView', '~> 1.0.0'
+pod 'ContentFittingWebView'
 ```
+
+## Author
+
+Rhys Powell, rhys@rpowell.me
+
+## License
+
+ContentFittingWebView is available under the MIT license. See the LICENSE file for more info.
