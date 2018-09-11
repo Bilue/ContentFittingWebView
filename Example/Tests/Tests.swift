@@ -2,48 +2,40 @@
 
 import Quick
 import Nimble
+import WebKit
 import ContentFittingWebView
+
+final class MockContentFittingWebViewDelegate: ContentFittingWebViewDelegate {
+    var willChangeSizeCalled = false
+    var didChangeSizeCalled = false
+
+    func contentFittingWebView(_ contentFittingWebView: ContentFittingWebView, willChangeSizeTo size: CGSize) {
+        willChangeSizeCalled = true
+    }
+
+    func contentFittingWebView(_ contentFittingWebView: ContentFittingWebView, didChangeSizeTo size: CGSize) {
+        didChangeSizeCalled = true
+    }
+}
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
-        describe("these will fail") {
+        describe("ContentFittingWebView") {
+            let webView = ContentFittingWebView(frame: .zero, configuration: WKWebViewConfiguration())
 
-            it("can do maths") {
-                expect(1) == 2
+            it("has an intrinsic content size") {
+                webView.loadHTMLString("<p>Test</p>", baseURL: nil)
+                expect(webView.intrinsicContentSize.height).toEventually(beGreaterThan(0), timeout: 5)
             }
 
-            it("can read") {
-                expect("number") == "string"
-            }
-
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
-            }
-            
-            context("these will pass") {
-
-                it("can do maths") {
-                    expect(23) == 23
-                }
-
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-
-                it("will eventually pass") {
-                    var time = "passing"
-
-                    DispatchQueue.main.async {
-                        time = "done"
-                    }
-
-                    waitUntil { done in
-                        Thread.sleep(forTimeInterval: 0.5)
-                        expect(time) == "done"
-
-                        done()
-                    }
-                }
+            it("lets its delegate know when its size changes") {
+                let delegate = MockContentFittingWebViewDelegate()
+                let initialSize = webView.intrinsicContentSize
+                webView.delegate = delegate
+                webView.loadHTMLString("<br/><br/><p>Test</p>", baseURL: nil)
+                expect(delegate.willChangeSizeCalled).toEventually(beTrue())
+                expect(delegate.didChangeSizeCalled).toEventually(beTrue())
+                expect(webView.intrinsicContentSize) != initialSize
             }
         }
     }

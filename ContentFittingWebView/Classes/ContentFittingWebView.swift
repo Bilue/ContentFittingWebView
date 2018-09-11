@@ -15,10 +15,10 @@ import WebKit
 ///   `hasLiveContent` to true
 public final class ContentFittingWebView: WKWebView {
 
-    var contentSizeObservationToken: NSKeyValueObservation?
+    private var contentSizeObservationToken: NSKeyValueObservation?
 
     /// A delegate that will receive updates when this web view's size changes
-    weak var delegate: ContentFittingWebViewDelegate?
+    public weak var delegate: ContentFittingWebViewDelegate?
 
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
