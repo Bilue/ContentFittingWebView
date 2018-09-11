@@ -30,7 +30,7 @@ to position a view directly beneath web content using AutoLayout.
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.1'
 
-  s.source_files = 'ContentFittingWebView/Classes/**/*'
+  s.source_files = 'Sources/ContentFittingWebView/**/*'
 
   s.frameworks = 'UIKit', 'WebKit'
 end
