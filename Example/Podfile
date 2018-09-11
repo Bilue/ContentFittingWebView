@@ -1,8 +1,9 @@
+platform :ios, '11.0'
+
 use_frameworks!
+inhibit_all_warnings!
 
 target 'ContentFittingWebView_Example' do
-  inhibit_all_warnings!
-
   pod 'ContentFittingWebView', :path => '../'
 
   target 'ContentFittingWebView_Tests' do
