@@ -27,5 +27,4 @@ Carthage/
 
 # CocoaPods
 Pods/
-_Pods.xcodeproj/
 Example/*.xcworkspace

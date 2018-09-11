@@ -1,5 +1,5 @@
 PODS:
-  - ContentFittingWebView (0.1.0)
+  - ContentFittingWebView (1.1.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ContentFittingWebView: b03507767fbd809d2ce9d36a76444c6a727b1a05
+  ContentFittingWebView: 6cfab013d09aebc6c1d3ba48802555582732ea76
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
