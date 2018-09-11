@@ -25,7 +25,7 @@ to position a view directly beneath web content using AutoLayout.
   s.homepage         = 'https://github.com/Bilue/ContentFittingWebView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Rhys Powell' => 'rhys@rpowell.me' }
-  s.source           = { :git => 'https://github.com/Bilue/ContentFittingWebView.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Bilue/ContentFittingWebView.git', :tag => "v#{s.version.to_s}" }
 
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.1'
