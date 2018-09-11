@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ContentFittingWebView'
-  s.version          = '0.1.0'
+  s.version          = '1.1.0'
   s.summary          = 'A WKWebView subclass which sizes itself to fit its contents.'
 
 # This description is used to generate tags and improve search results.
